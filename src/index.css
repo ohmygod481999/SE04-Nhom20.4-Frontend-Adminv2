@@ -1,13 +1,172 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+﻿.rbc.toolbar {
+    flex-wrap: nowrap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.w-110-px {
+    width: 110px;
+}
+
+.app-header.header-text-light .app-header__logo .logo-src.izzi-cms {
+    background-image: url(https://static.foodizzi.com/images/2020/3/28/2003286969_logoizzicmsw.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.app-header.header-text-dark .app-header__logo .logo-src.izzi-cms {
+    background-image: url(https://static.foodizzi.com/images/2020/3/28/2003287517_logoizzicms.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.app-header__logo .logo-src.izzi-cms {
+    background: url(https://static.foodizzi.com/images/2020/3/28/2003287517_logoizzicms.png);
+    height: 30px;
+    width: 162px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.app-header.header-text-light .app-header__logo .logo-src.izzi-learn {
+    background-image: url(https://static.foodizzi.com/images/2020/6/5/2006053744_logoizzilearnngangw.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.app-header.header-text-dark .app-header__logo .logo-src.izzi-learn {
+    background-image: url(https://static.foodizzi.com/images/2020/6/5/2006050107_logoizzilearnngang.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.app-header__logo .logo-src.izzi-learn {
+    background: url(https://static.foodizzi.com/images/2020/6/5/2006050107_logoizzilearnngang.png);
+    height: 30px;
+    width: 162px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+input.hiden-arrow::-webkit-outer-spin-button,
+input.hiden-arrow::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.bg-gray {
+    background-color: #cecece !important;
+}
+
+a.disabled {
+    /* Make the disabled links grayish*/
+    color: gray;
+    /* And disable the pointer events */
+    pointer-events: none;
+}
+
+/* label,i[id^="icon"]{
+    color: rgba(255, 255, 255, 0.7);
+} */
+.hover-blur {
+    position: relative;
+}
+
+.hover-blur:hover img {
+    filter: blur(2px);
+}
+
+.hover-blur .hover-blur-item {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    top: 50%; /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%);
+}
+
+.hover-blur:hover .hover-blur-item {
+    z-index: 10;
+    display: block;
+    filter: blur(0);
+}
+
+div.ReactTable .rt-tbody {
+    overflow: initial;
+}
+
+.red {
+    color: red;
+}
+
+.ck-editor__editable_inline {
+    min-height: 200px;
+}
+
+.nav.btn-group {
+    display: inline-flex;
+}
+.btn-izzi.btn-hover-shine:hover:after {
+    width: 100% !important;
+}
+
+.demo-tran:hover {
+    background-position: bottom center !important;
+    transition: background-position 10s linear 0s;
+}
+.demo-tran {
+    position: relative;
+    height: 250px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transition: background-position 1.5s ease-out 0.5s;
+    background-position: top center;
+    background-size: 100% auto !important;
+    background-repeat: no-repeat;
+    width: 100%;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    overflow: hidden;
+}
+.demo-tran .badge {
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.btn-demo-hover {
+    width: 40%;
+}
+.demo-btn {
+    margin-top: 25%;
+}
+.uk-overlay-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: #fff;
+}
+.preview-overlay-hover:not(:hover):not(.uk-hover)
+    .uk-overlay-panel:not(.uk-ignore) {
+    opacity: 0;
+}
+.uk-overlay-background {
+    background: rgba(0, 0, 0, 0.2);
+}
+.uk-overlay-fade {
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-property: opacity, transform, filter;
+}
+
+@media (max-width: 767.98px) {
+    .xs-overflow-y {
+        overflow-x: auto;
+        align-items: center;
+        display: flex !important;
+        flex-flow: initial;
+    }
+    .xs-overflow-y .btn {
+        white-space: nowrap;
+    }
 }
