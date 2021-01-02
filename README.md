@@ -61,20 +61,20 @@
     
    ### Công nghệ sử dụng
     - Ngôn ngữ lập trình:
-        1. Back-end: .Net Core 2.2 và GraphQL.
+        1. Back-end: .Net Core 2.2 và GraphQL. --Link project(https://github.com/DarkW1llow/SE04-Nhom20.4-Backend-API)
             .NET Core là một nền tảng phát triển đa mục đích, mã nguồn mở được duy trì bởi Microsoft và cộng đồng .NET trên GitHub. 
             Đó là nền tảng chéo hỗ trợ Windows, macOS và Linux) và có thể được sử dụng để xây dựng các ứng dụng thiết bị, đám mây và IoT.
             - GraphQL là một Graph Query Language được dành cho API. Nó được phát triển bởi Facebook và hiện tại nó được duy trì bởi rất nhiều công ty lớn, 
             và mọi cá nhân trên khắp thế giới. GraphQL từ khi ra đời đã gần như thay thế hoàn toàn REST bởi sự hiệu quả, mạnh mẽ và linh hoạt hơn rất nhiều.
             
-        2. Front-end (Web admin): ReactJS.
+        2. Front-end (Web admin): ReactJS. --Link project(https://github.com/DarkW1llow/SE04-Nhom20.4-Frontend-Adminv2)
           React.js là một thư viện Javascript đang nổi lên trong những năm gần đây với xu hướng Single Page Application. 
           Trong khi những framework khác cố gắng hướng đến một mô hình MVC hoàn thiện thì React nổi bật với sự đơn giản và dễ dàng phối hợp với những thư viện Javascript khác.
           Nếu như AngularJS là một Framework cho phép nhúng code javasscript trong code html thông qua các attribute như ng-model, ng-repeat...
           thì với react là một library cho phép nhúng code html trong code javascript nhờ vào JSX, 
           bạn có thể dễ dàng lồng các đoạn HTML vào trong JS.Tích hợp giữa javascript và HTML vào trong JSX làm cho các component dễ hiểu hơn
           
-        3. Framework: React Native.
+        3. Framework: React Native. --Link project(https://github.com/DarkW1llow/SE04-Nhom20.4-Frontend-MoblieApp)
             React Native là một framework do công ty công nghệ nổi tiếng Facebook phát triển 
         nhằm mục đích giải quyết bài toán hiệu năng của Hybrid và bài toán chi phí khi mà phải
         viết nhiều loại ngôn ngữ native cho từng nền tảng di động. Chúng ta sẽ build được 
