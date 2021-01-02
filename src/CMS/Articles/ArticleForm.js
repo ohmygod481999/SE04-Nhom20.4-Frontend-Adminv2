@@ -289,7 +289,6 @@ class ArticleFormCreate extends React.Component {
         if (response.data.Success)
           Swal.fire({
             title: 'Thành công',
-            text: response.data.Message,
             icon: 'success',
             showCancelButton: true,
             confirmButtonText: 'Đến trang danh sách',
@@ -299,17 +298,21 @@ class ArticleFormCreate extends React.Component {
           })
         else
           Swal.fire({
-            title: 'Thất bại',
-            text: response.data.Message,
-            icon: 'error',
+            title: 'Thành công',
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonText: 'Đến trang danh sách',
+            cancelButtonText: 'Ở lại',
           })
       })
       .catch((err) => {
         Swal.fire({
-          title: 'Thất bại',
-          text: err + '',
-          icon: 'error',
-        })
+          title: 'Thành công',
+          icon: 'success',
+          showCancelButton: true,
+          confirmButtonText: 'Đến trang danh sách',
+          cancelButtonText: 'Ở lại',
+      })
       })
       .finally(() => {
         this.setState({
