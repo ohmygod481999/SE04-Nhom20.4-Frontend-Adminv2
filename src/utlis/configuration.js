@@ -3,8 +3,8 @@ import text from "./text";
 
 const Configuration = {
     googleMapApiKey: "AIzaSyCotFeTTdmEzjeVdx1_eAI4-mkfy73jgd8",
-    merchantLocal: "ocxinhsaigon",
-    url_api: "https://apiRestful.izzi.asia",
+    merchantLocal: "",
+    url_api: "",
     merchantCode: "merchantCode",
     languageCode: "langauageCode",
     userCookie: "tokenId",
@@ -12,22 +12,21 @@ const Configuration = {
     merchantId: "merchantId",
     tokenLanguage: "cmsLanguage",
     tokenNewMerchant: "newMerchant",
-    url_graphQl: "https://apicms.izzi.asia/graphql/", //'http://graphqlP.labo.io/graphql',
+    url_graphQl: "",
     languageVi: "838aef56-78bb-11e6-b5a6-00155d582814",
-    languageEn: "e3509252-c42d-4ae5-9779-d4805a687a8e",
-    image_url: "https://static.foodizzi.com",
-    image_upload_url: "https://apicommand.izzi.asia/Image/UploadFile",
+    image_url: "",
+    image_upload_url: "",
     MAX_FILE_SIZE: 512000,
     //MAX_FILE_SIZE_BOOK: 4194304, //4MB
     MAX_FILE_SIZE_BOOK: 104857600, //4MB
     sampleUserExcelLink:
-        "https://static.foodizzi.com/TemplateImport/TemplateImportUser.xlsx",
+        "",
     domain: ".labo.io",
     https: "https://",
     helpDeskMerchantId: "74d84561-4925-4b13-9e5c-0137bea8afcd",
     libraryMerchantId: "ebd5cacf-c5f5-4ad2-975d-7ed5a21f45de",
     defaultImg:
-        "https://static.foodizzi.com/images/2020/3/26/2003268324_defaultimage.jpg",
+        "",
     iframePreview: "https://" + Common.getCookie("merchantCode") + ".labo.io",
     linkNav: {
         categories: function({ id, name }) {

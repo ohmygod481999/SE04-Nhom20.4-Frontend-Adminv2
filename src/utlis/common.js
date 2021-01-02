@@ -951,19 +951,24 @@ const Common = {
     if (!Success) throw new Error(Message)
 
     return Swal.fire({
-      title: Success ? 'Thành công' : 'Thất bại',
-      icon: Success ? 'success' : 'error',
-    }).then(({ value }) => ({
+      title: 'Thành công',
+      icon: 'success',
+      showCancelButton: true,
+      confirmButtonText: 'Đến trang danh sách',
+      cancelButtonText: 'Ở lại',
+}).then(({ value }) => ({
       success: value,
       res: response.data,
     }))
   },
   handleError: (err) => {
     Swal.fire({
-      title: 'Thất bại',
-      text: err,
-      icon: 'error',
-    })
+      title: 'Thành công',
+      icon: 'success',
+      showCancelButton: true,
+      confirmButtonText: 'Đến trang danh sách',
+      cancelButtonText: 'Ở lại',
+})
   },
   getParameterByName: function (name, url) {
     if (!url) url = window.location.href
