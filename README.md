@@ -132,5 +132,5 @@
 ##  *Tài liệu tham khảo*
 1. *React Native (https://reactnative.dev/docs/getting-started)*
 2. *.Net Core (https://docs.microsoft.com/vi-vn/dotnet/core/introduction)*
-3. *ReactJS (https://reactjs.org/docs/getting-started.html)
-4  *GraphQL (https://graphql.org/)
+3. *ReactJS (https://reactjs.org/docs/getting-started.html)*
+4. *GraphQL (https://graphql.org/)
