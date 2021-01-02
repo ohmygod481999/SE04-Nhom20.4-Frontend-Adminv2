@@ -5,6 +5,7 @@ import {
   AvInput,
 } from 'availity-reactstrap-validation'
 import axios from 'axios'
+// import { id } from 'date-fns/locale'
 import React, { createRef } from 'react'
 import BlockUi from 'react-block-ui'
 import Loader from 'react-loaders'
@@ -199,11 +200,21 @@ class ArticleFormCreate extends React.Component {
       })
     })
 
+    const articleId = this.props.match.params.id !== undefined ? this.props.match.params.id : Common.guid()
+
+    const friendlyUrl = value.friendlyUrl ? value.friendlyUrl : Common.rewriteUrl(value.name)
+
+    const name = value.name
+
+    const subDescription = value.subDescription
+
+    const description = this.state.article.description
+
+    const descriptionV2 = description.replace(/(\r\n|\n|\r)/gm, "")
+    
+
     const body = {
-      Id:
-        this.props.match.params.id !== undefined
-          ? this.props.match.params.id
-          : Common.guid(),
+      Id: this.props.match.params.id !== undefined ? this.props.match.params.id : Common.guid(),
       MerchantId: Common.getCookie('merchantId'),
       Name: value.name, // formData.get('name'),
       SubDescription: value.subDescription, // formData.get('subDescription'),
@@ -253,13 +264,34 @@ class ArticleFormCreate extends React.Component {
       body.Videos = relationVideos
     }
 
+    const articleMutation = `mutation {
+      addArticle(param: {id: "${articleId}", merchantId: "dae99e20-3f99-4eb0-b05b-2ce2f58d3163", friendlyUrl: "${friendlyUrl}", name: "${name}", subDescription: "${subDescription}", description: "${descriptionV2}", languageId: "838aef56-78bb-11e6-b5a6-00155d582814"}){
+        id
+        merchantId
+        friendlyUrl
+        name
+        subDescription
+        description
+        languageId
+      }
+    }`
+    
+
+    const body1 = 'mutation{addArticle(param: { id: "90f402ba-a8eb-4a70-90e2-63f6f4ec26ba", merchantId: "dae99e20-3f99-4eb0-b05b-2ce2f58d3163", friendlyUrl: "test", name: "tester", subDescription: "tester01", description: "tester02", languageId: "838aef56-78bb-11e6-b5a6-00155d582814"}) {id,merchantId,friendlyUrl,name,subDescription,description,languageId}}'
+
+    const testMutation = {
+      query: articleMutation
+    }
+
+    const testMutationJson = JSON.stringify(testMutation)
+
     const dataSend = {
       CommandName:
         this.props.match.params.id !== undefined
           ? this.props.type.commandUpdate
           : this.props.type.commandCreate,
       Domain: 'Article',
-      Content: JSON.stringify(body),
+      Content: JSON.stringify(testMutationJson),
       TimeOutSecond: 7,
     }
 
@@ -282,9 +314,9 @@ class ArticleFormCreate extends React.Component {
         break
     }
 
-    const api_url = Configuration.url_api + '/Command/SendSync'
+    const api_url = Configuration.mutation_graphQL /*+ '/Command/SendSync'*/
     axios
-      .post(api_url, dataSend)
+      .post(api_url, testMutation)
       .then((response) => {
         if (response.data.Success)
           Swal.fire({
@@ -297,14 +329,16 @@ class ArticleFormCreate extends React.Component {
             if (value) this.props.history.push(redirectPath)
           })
         else
-          Swal.fire({
-            title: 'Thành công',
-            icon: 'success',
-            showCancelButton: true,
-            confirmButtonText: 'Đến trang danh sách',
-            cancelButtonText: 'Ở lại',
-          })
-      })
+        Swal.fire({
+          title: 'Thành công',
+          icon: 'success',
+          showCancelButton: true,
+          confirmButtonText: 'Đến trang danh sách',
+          cancelButtonText: 'Ở lại',
+        }).then(({ value }) => {
+          if (value) this.props.history.push(redirectPath)
+        })
+    })
       .catch((err) => {
         Swal.fire({
           title: 'Thành công',
@@ -312,8 +346,10 @@ class ArticleFormCreate extends React.Component {
           showCancelButton: true,
           confirmButtonText: 'Đến trang danh sách',
           cancelButtonText: 'Ở lại',
-      })
-      })
+        }).then(({ value }) => {
+          if (value) this.props.history.push(redirectPath)
+        })
+    })
       .finally(() => {
         this.setState({
           isSending: false,
